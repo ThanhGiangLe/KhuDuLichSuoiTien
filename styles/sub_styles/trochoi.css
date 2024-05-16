@@ -1,0 +1,32 @@
+.content {
+    margin: 16px 0;
+}
+.content_heading {
+    padding: 12px 0;
+    color: #8C4E2A;
+}
+.content_discription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content_discription p {
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 4px;
+}
+.card-body {
+    background-color: #cc5505;
+}
+.card-title {
+    margin: 4px 0 0;
+    color: white;
+}
+.card img {
+    height: 280px;
+    transition: 1s ease-in-out;
+}
+.card img:hover {
+    transform: scale(0.9);
+    border-radius: 10px;
+}

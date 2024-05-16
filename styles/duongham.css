@@ -1,0 +1,29 @@
+.navigation-list {
+    display: flex;
+    height: 52px;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+.navigation-item{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+.content {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.content img {
+    width: 100%;
+}
+.content_heading{
+    padding-bottom: 16px;
+    color: #8C4E2A;
+}
+.content_discription{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}

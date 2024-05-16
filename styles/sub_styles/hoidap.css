@@ -1,0 +1,19 @@
+.content {
+    margin: 16px 0;
+}
+.content_heading {
+    padding: 12px 0;
+    color: #8C4E2A;
+}
+.dropdown-toggle:hover {
+    background-color: #f3eded;
+}
+.dropdown-toggle {
+    font-size: 24px;
+    padding: 10px 12px;
+}
+.dropdown-menu {
+    font-size: 18px;
+    min-width: 666px;
+    padding: 12px 16px;
+}
