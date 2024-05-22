@@ -1,5 +1,5 @@
 .content {
-    margin: 16px 0;
+    margin: 32px 0;
 }
 .content_heading {
     padding: 12px 0;
@@ -15,12 +15,18 @@
     text-align: justify;
     margin-top: 4px;
 }
-.card-title {
-    margin: 0;
-}
 .card-body {
-    background-color: #FFEC9E;
+    background-color: #cc5505;
 }
-.card__img {
-    height: 250px;
+.card-title {
+    margin: 4px 0 0;
+    color: white;
+}
+.card img {
+    height: 280px;
+    transition: 1s ease-in-out;
+}
+.card img:hover {
+    transform: scale(0.9);
+    border-radius: 10px;
 }

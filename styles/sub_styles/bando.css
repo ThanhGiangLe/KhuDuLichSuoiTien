@@ -1,5 +1,5 @@
 .content {
-    margin: 16px 0;
+    margin: 32px 0;
 }
 .content_heading {
     padding: 12px 0;
@@ -11,6 +11,6 @@
     justify-content: center;
 }
 .content_discription p {
-    font-size: 20px;
+    font-size: 22px;
     text-align: justify;
 }
