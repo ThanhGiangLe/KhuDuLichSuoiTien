@@ -640,10 +640,12 @@ a.nav-item_sub__item:hover {
 .container-partner_list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .container-partner_item {
   width: 200px;
   height: 200px;
+  margin-top: 12px;
 }
 .container-partner_list img {
   width: 100%;
@@ -677,7 +679,20 @@ a.nav-item_sub__item:hover {
     width: 100%;
     height: 532px;
   }
+  .container-map_location {
+    flex-direction: column;
+  }
+  .container-map_location__item:first-child {
+    margin-right: 0;
+  }
+  .container-map_location__item:last-child {
+    margin-left: 0;
+  }
 }
+
+@media (min-width: 840px) and (max-width: 1200px) {
+}
+
 /* Mobile */
 @media (max-width: 840px) {
   .header {
@@ -689,15 +704,22 @@ a.nav-item_sub__item:hover {
   .header-title {
     display: none;
   }
+  .container-map_location {
+    flex-direction: column;
+  }
+  .container-map_location__item:first-child {
+    margin-right: 0;
+  }
+  .container-map_location__item:last-child {
+    margin-left: 0;
+  }
 }
 
-.btn {
+.my-btn {
   background-color: #cc5500;
   color: #fff;
   padding: 24px 32px;
-  /* Bỏ gạch chân */
   text-decoration: none;
-  /* Để phần Padding không dính ở trên */
   display: inline-block;
   border: none;
   position: fixed;
@@ -706,7 +728,7 @@ a.nav-item_sub__item:hover {
   font-size: 20px;
 }
 
-.btn:hover {
+.my-btn:hover {
   cursor: pointer;
   color: #000;
   background-color: #d97904;
@@ -714,7 +736,6 @@ a.nav-item_sub__item:hover {
 
 .modal {
   position: fixed;
-  /* Cho 4 hướng = 0 để bám vào 4 hướng */
   top: 0;
   right: 0;
   bottom: 0;
@@ -739,11 +760,6 @@ a.nav-item_sub__item:hover {
 }
 
 .model-header {
-  /* 
-     Khi dùng Display: flex;
-     Align-items: center;   dùng để cân giữa chiều cao
-     Justify-content: center;   dùng để cân giữa chiều ngang
-     */
   background: #5e8c6a;
   height: 130px;
   display: flex;
@@ -792,6 +808,8 @@ a.nav-item_sub__item:hover {
   font-size: 15px;
 }
 
+#check-tickets-name,
+#check-tickets-mail,
 #check-tickets-phone,
 #check-tickets-quantity {
   margin-bottom: 24px;

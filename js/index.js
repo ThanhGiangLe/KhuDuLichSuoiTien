@@ -27,33 +27,22 @@ btnImage.onclick = function () {
 // Xử lý Header và Navigation
 
 // Modal
-const buyBtns = document.querySelectorAll(".js-buy-ticket");
+const buyBtn = document.querySelector(".js-buy-ticket");
 const modal = document.querySelector(".js-modal");
 const modalClose = document.querySelector(".js-modal-close");
 const modelContain = document.querySelector(".js-model-container");
 
-// Viết hàm hiển thị Cửa sổ mua vé
 function showBuyTickets() {
-  modal.classList.add("open");
+  modal.classList.add("show");
 }
-
-// Viết hàm ẩn đi cửa sổ mua vé
 function hideBuyTickets() {
-  modal.classList.remove("open");
+  modal.classList.remove("show");
 }
 
-// Dùng vòng lặp để lặp qua từng thẻ Tickets sau đó lắng nghe sự
-// kiện Click vào từng Ticket để gọi lại hàm hiển thị Cửa sổ mua vé
-for (const bytBtn of buyBtns) {
-  bytBtn.addEventListener("click", showBuyTickets);
-}
+buyBtn.addEventListener("click", showBuyTickets);
 
-// Lắng nghe sự kiện Click vào nút Close để gọi lại hàm
-// ẩn đi Cửa sổ mua vé
 modalClose.addEventListener("click", hideBuyTickets);
 
-// Lắng nghe sự kiện Click vào cả khoản không của 'thẻ Modal'
-// để gọi lại hàm ẩn đi Cửa sổ mua vé
 modal.addEventListener("click", hideBuyTickets);
 
 // Ngăn chặn sự kiện nổi bọt ra ngoài thẻ cha
@@ -62,20 +51,40 @@ modelContain.addEventListener("click", function (e) {
 });
 
 // Kiểm tra mua vé
-// document.getElementById("buy-tickets").addEventListener("submit", function (e) {
-//   console.log("thành công");
-//   e.preventDefault();
-// });
+// var buy_tickets = document.getElementById("buy-tickets");
+// buy_tickets.onclick = function (e) {
+//   let soVe = document.getElementById("tickets-quantity").value * 1;
+//   let lienHe = document.getElementById("tickets-phone").value * 1;
+//   if (soVe == 0) {
+//     document.getElementById("check-tickets-quantity").innerHTML =
+//       "***Vui lòng nhập số vé!!!";
+//   } else if (lienHe == 0) {
+//     document.getElementById("check-tickets-phone").innerHTML =
+//       "***Vui lòng nhập số điện thoại!!!";
+//   }
+// };
 
-var buy_tickets = document.getElementById("buy-tickets");
-buy_tickets.onclick = function (e) {
-  let soVe = document.getElementById("tickets-quantity").value * 1;
-  let lienHe = document.getElementById("tickets-phone").value * 1;
-  if (soVe == 0) {
-    document.getElementById("check-tickets-quantity").innerHTML =
-      "***Vui lòng nhập số vé!!!";
-  } else if (lienHe == 0) {
-    document.getElementById("check-tickets-phone").innerHTML =
-      "***Vui lòng nhập số điện thoại!!!";
-  }
-};
+//Mail
+function sendMail() {
+  var params = {
+    name: document.getElementById("tickets-name").value,
+    email: document.getElementById("tickets-mail").value,
+    quantity: document.getElementById("tickets-quantity").value,
+    phone: document.getElementById("tickets-phone").value,
+  };
+
+  const serviceID = "service_erzczjb";
+  const templateID = "template_9yvz7di";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      document.getElementById("tickets-name").value = "";
+      document.getElementById("tickets-mail").value = "";
+      document.getElementById("tickets-quantity").value = "";
+      document.getElementById("tickets-phone").value = "";
+      console.log(res);
+      alert("Your message sent successfully!!");
+    })
+    .catch((err) => console.log(err));
+}

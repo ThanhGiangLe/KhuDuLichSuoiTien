@@ -43,6 +43,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("gmaV48tWPVx0cV8XH");
+      })();
+    </script>
 </head>
 <body class="bd">   
   
@@ -404,63 +413,60 @@
       </a> 
     </div>
 
-
-
-
     <!-- Mua vé -->
-    <button class="btn js-buy-ticket">Mua vé</button>
+    <button class="my-btn js-buy-ticket">Mua vé</button>
     <div class="modal js-modal">
-      <!-- Phần chứa phần chính hiện lên vé mua -->
        <div class="model-contain js-model-container">
-          <!-- Đóng -->
           <div class="model-close js-modal-close">
               <i class="ti-close"></i>
           </div>
-
-          <!-- Phần Header -->
+          
           <div class="model-header">
               <i class="ti-bag"></i>
               Tickets
           </div>
 
-          <!-- Phần Body -->
-          <form action="./html/DatVeThamQuan.html" method="get">
+          <!-- <form action="./html/DatVeThamQuan.html" method="get"> -->
             <div class="model-body">
+              <label for="tickets-name" class="model-label">
+                <span class="material-symbols-outlined">confirmation_number</span>
+                Name
+              </label>
+              <input required id="tickets-name" type="text" name="tickets-name" class="model-input" placeholder="Tên quý khách?">
+              <p id="check-tickets-name"></p>
+
               <label for="tickets-quantity" class="model-label">
-                <span class="material-symbols-outlined">
-                  confirmation_number
-                </span>
-                  Số lượng vé
+                <span class="material-symbols-outlined">confirmation_number</span>
+                Số lượng vé
               </label>
               <input required id="tickets-quantity" type="number" name="tickets-quantity" class="model-input" placeholder="Bạn đi bao nhiêu người?">
               <p id="check-tickets-quantity"></p>
 
               <label for="tickets-phone" class="model-label">
-                <span class="material-symbols-outlined">
-                  person
-                </span>
+                <span class="material-symbols-outlined">person</span>
                 Liên hệ
               </label>
               <input required id="tickets-phone" type="number" name="tickets-phone" class="model-input" minlength="10" maxlength="10" placeholder="Số điện thoại">
               <p id="check-tickets-phone"></p>
-              <button id="buy-tickets" type="submit">
+
+              <label for="tickets-mail" class="model-label">
+                <span class="material-symbols-outlined">mail</span>
+                Email
+              </label>
+              <input required id="tickets-mail" type="email" name="tickets-mail" class="model-input" placeholder="Email">
+              <p id="check-tickets-mail"></p>
+
+              <button id="buy-tickets" type="submit" onclick="sendMail()">
                   Đặt
                   <i class="ti-check"></i>
               </button>
             </div>
-          </form>
-
-          <!-- Phần need help -->
+          <!-- </form> -->
           <div class="modal-foter">
               <p class="modal-help">Need <a href="">help?</a></p>
           </div>
-
        </div>
-       <!-- Kết thúc phần chứa phần chính hiện lên vé mua -->
     </div>
-
-
-
 
     <!-- Bản đồ -->
     <div class="maps">
